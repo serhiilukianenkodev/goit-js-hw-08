@@ -5,10 +5,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import { galleryItems } from './gallery-items';
 // Change code below this line
 
-// let gallery = new SimpleLightbox('.gallery a');
-
 console.log(galleryItems);
-
 
 const galleryEl = document.querySelector('.gallery')
 const galleryMarkup = createGalleryMarkup(galleryItems)
