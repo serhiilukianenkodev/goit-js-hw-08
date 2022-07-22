@@ -1,5 +1,6 @@
 import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
+import '../css/common.css'
 
 let localStorageKey = "videoplayer-current-time"; 
 
