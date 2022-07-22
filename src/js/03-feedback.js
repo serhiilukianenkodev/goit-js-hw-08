@@ -7,9 +7,8 @@ const LOCAL_STORAGE_KEY = "feedback-form-state";
 formEl.addEventListener('submit', onFormSubmit);
 formEl.addEventListener('input', throttle(onFormInput, 500));
 
+if(localStorage.getItem(LOCAL_STORAGE_KEY))
 fillFormCurrentData();
-
-console.dir(formEl);
 
 function onFormSubmit(e){
     e.preventDefault();
@@ -37,6 +36,6 @@ function fillFormCurrentData (){
       }
 
 
-    if(savedData)
-    console.log(savedData);
+    // if(savedData)
+    // console.log(savedData);
 }
