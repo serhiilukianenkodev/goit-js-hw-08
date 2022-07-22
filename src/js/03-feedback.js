@@ -9,12 +9,15 @@ const LOCAL_STORAGE_KEY = "feedback-form-state";
 formEl.addEventListener('submit', onFormSubmit);
 formEl.addEventListener('input', throttle(onFormInput, 500));
 
-if(localStorage.getItem(LOCAL_STORAGE_KEY))
+const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+
+if(savedData)
 fillFormCurrentData();
 
 function onFormSubmit(e){
     e.preventDefault();
     e.currentTarget.reset();
+    console.log(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)));
     localStorage.removeItem(LOCAL_STORAGE_KEY)
 }
 
@@ -25,7 +28,6 @@ function onFormInput(e) {
 }
 
 function fillFormCurrentData (){
-    const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
 
     try {
         const savedDataObj = JSON.parse(savedData);
@@ -37,7 +39,4 @@ function fillFormCurrentData (){
         console.log(error.message); // Unexpected token W in JSON at position 0
       }
 
-
-    // if(savedData)
-    // console.log(savedData);
 }
